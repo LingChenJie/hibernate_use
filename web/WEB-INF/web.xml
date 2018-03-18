@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <filter>
+        <filter-name>genericEncoding</filter-name>
+        <filter-class>com.paxsh.hbn.web.filter.GenericEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>genericEncoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <description>添加客户</description>
+        <servlet-name>AddCustomer</servlet-name>
+        <servlet-class>com.paxsh.hbn.web.AddCustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCustomer</servlet-name>
+        <url-pattern>/addCustomer</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description>添加联系人</description>
+        <servlet-name>AddLinkMan</servlet-name>
+        <servlet-class>com.paxsh.hbn.web.AddLinkManServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddLinkMan</servlet-name>
+        <url-pattern>/addLinkMan</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description>客户列表</description>
+        <servlet-name>ListCustomer</servlet-name>
+        <servlet-class>com.paxsh.hbn.web.ListCustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListCustomer</servlet-name>
+        <url-pattern>/listCustomer</url-pattern>
+    </servlet-mapping>
+</web-app>
